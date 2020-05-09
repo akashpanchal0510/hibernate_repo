@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.inn.domain.EmpDetails" table="Employee">
+		<id name="no" column="no">
+			<generator class="increment"/>
+		</id>
+		<property name="fname" column="fname" length="15" type="string"/>
+		<property name="lname" column="lname" length="15" type="string"/>
+		<property name="mail" column="mail" length="30" type="string"/>
+	</class>
+</hibernate-mapping>
