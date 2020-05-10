@@ -28,7 +28,7 @@ public class UpdateEmployee {
 		if (emp != null) {
 			emp.setFname("mukesh");
 			emp.setLname("sharma");
-			emp.setMail("mukesh@gmail.com");
+			emp.setMail("mukesh.sharma@gmail.com");
 			try {
 				ses.update(emp);
 				tx.commit();
