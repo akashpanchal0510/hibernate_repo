@@ -6,7 +6,7 @@
 	<class name="com.inn.domain.EmpDetails" table="Employee"
 		dynamic-update="true" dynamic-insert="true">
 		<id name="no" column="no">
-			<generator class="increment" />
+			<generator class="native" />
 		</id>
 		<property name="fname" column="fname" length="15"
 			type="string" />

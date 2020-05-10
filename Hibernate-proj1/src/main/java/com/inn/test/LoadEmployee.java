@@ -12,7 +12,8 @@ public class LoadEmployee {
 		// TODO Auto-generated method stub
 		Configuration cfg = new Configuration();
 
-		cfg = cfg.configure("/com/inn/cfgs/hibernate-cfg.xml");
+//		cfg = cfg.configure("/com/inn/cfgs/Ora_hibernate-cfg.xml");
+		cfg = cfg.configure("/com/inn/cfgs/mysql_hibernate-cfg.xml");
 
 		SessionFactory factory = cfg.buildSessionFactory();
 

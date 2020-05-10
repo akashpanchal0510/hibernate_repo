@@ -13,20 +13,22 @@ public class SaveEmployee {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Scanner sc = new Scanner(System.in);
-//		
-//		System.out.println("Enter first name...");
-//		String fname = sc.next();
-//		
-//		System.out.println("Enter last name...");
-//		String lname = sc.next();
-//		
-//		System.out.println("Enter mail...");
-//		String mail = sc.next();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter first name...");
+		String fname = sc.next();
+		
+		System.out.println("Enter last name...");
+		String lname = sc.next();
+		
+		System.out.println("Enter mail...");
+		String mail = sc.next();
 		
 		Configuration cfg = new Configuration();
 		
-		cfg = cfg.configure("/com/inn/cfgs/hibernate-cfg.xml");
+//		cfg = cfg.configure("/com/inn/cfgs/Ora_hibernate-cfg.xml");
+		cfg = cfg.configure("/com/inn/cfgs/mysql_hibernate-cfg.xml");
+
 		
 		SessionFactory factory = cfg.buildSessionFactory();
 		
@@ -36,9 +38,10 @@ public class SaveEmployee {
 		
 		EmpDetails emp = new EmpDetails();
 		
-		emp.setFname("sonu");
-		emp.setLname("soni");
-//		emp.setMail("sonu.soni@gmail.com");
+		emp.setNo(1);
+		emp.setFname(fname);
+		emp.setLname(lname);
+		emp.setMail(mail);
 		
 		try {
 			int idVal = (Integer) ses.save(emp);
