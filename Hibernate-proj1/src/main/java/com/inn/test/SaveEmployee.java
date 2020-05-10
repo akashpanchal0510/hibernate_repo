@@ -1,5 +1,7 @@
 package com.inn.test;
 
+import java.util.Scanner;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -7,10 +9,21 @@ import org.hibernate.cfg.Configuration;
 
 import com.inn.domain.EmpDetails;
 
-public class EmployeeDemo {
+public class SaveEmployee {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("Enter first name...");
+//		String fname = sc.next();
+//		
+//		System.out.println("Enter last name...");
+//		String lname = sc.next();
+//		
+//		System.out.println("Enter mail...");
+//		String mail = sc.next();
+		
 		Configuration cfg = new Configuration();
 		
 		cfg = cfg.configure("/com/inn/cfgs/hibernate-cfg.xml");
@@ -23,17 +36,22 @@ public class EmployeeDemo {
 		
 		EmpDetails emp = new EmpDetails();
 		
-		emp.setFname("akash");
-		emp.setLname("panchal");
-		emp.setMail("akash.panchal@innoeye.com");
+		emp.setFname("sonu");
+		emp.setLname("soni");
+//		emp.setMail("sonu.soni@gmail.com");
 		
 		try {
 			int idVal = (Integer) ses.save(emp);
+			System.out.println("id value = "+idVal);
 			tx.commit();
 			System.out.println("object saved...");
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+//		sc.close();
+		ses.close();
+		factory.close();
 	}
 
 }
